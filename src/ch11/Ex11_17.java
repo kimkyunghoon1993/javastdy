@@ -1,6 +1,7 @@
 package ch11;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -19,8 +20,8 @@ public class Ex11_17 {
         Iterator it = set.iterator();
 
         while (it.hasNext()){
-            Map.Entry e = (Map.Entry)it.next();
-            System.out.println("이름 : " + e.getKey() + ", 점수 :");
+            Map.Entry e = (Map.Entry)it.next(); // Map 인터페이스 , Entry 인테페이스 둘다 인터페이스 인데 Map의 내부 인터페이스가 바로 Entery 이다
+            System.out.println("이름 : " + e.getKey() + ", 점수 :" + e.getValue());
         }
 
         set = map.keySet();
@@ -32,9 +33,14 @@ public class Ex11_17 {
         int total = 0;
 
         while(it.hasNext()){
-            Integer i = (Integer)it.next();
-            total += i.intValue();
+            int i = (int)it.next();
+            total += i;
         }
+
+        System.out.println("총점 : " + total);
+        System.out.println("평균 : " + (float)total/set.size());
+        System.out.println("최고점수 : " + Collections.max(values));
+        System.out.println("최저점수 : " + Collections.min(values));
 
     }
 }
