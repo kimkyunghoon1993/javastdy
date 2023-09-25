@@ -30,6 +30,37 @@ public class Ex_25_26_27_28 {
         //      return normalize() .getDayOfMonth();
         // }
         // jvav는 하위 호환성을 중요하게 생각 하기 때문에
+        // - @Deprecated 가 붙은 대상이 상용된 코드를 컴파일 하면 나타나는 메시지
+        // Note: AnnotationEx2.java uses or overrides a deprecated API. 다시컴파일 하면 자세한 정보가 나온다
+        // Note: Recompile with -Xlint:deprecation for details. 자세한 정보
+
+        // 27. @Functionallnterface
+        // - 함수형 인터페이스에 붙이면, 컴파일러가 올바르게 작성했는지 체크
+        // 함수형 인터페이스에는 하나의 추상메서드만 가져야 한다는 제약이 있음
+
+        // ex)
+        // @FunctionalInterface     //@FunctionalInterface 를 안붙여도 된다 하지만 컴파일러가 더 정확하게 확인할수 있게 해주면 좋다
+        // public interfacew Runnable {
+        //      public abstract void run(); // 추상 메서드
+        // }
+
+        // 28. @SuppressWarnings
+        // - 컴파일러의 경고메시지가 나타나지 않게 억제한다.
+        // - 괄호()안에 억제하고자하는 경고의 종류를 문자열로 지정
+
+        // ex)
+        // @SuppressWarnings("unchecked")       // 지네릭스와 관련된 경고를 억제
+        // ArrayList list = new ArrayList();    // 지네릭 타입을 지정하지 않았음.  unchecked 경고 발생
+        // list.add(obj);                       // 여기서 경고가 발생
+
+        // - 둘 이상의 경고를 동시에 억제하려면 다음과 같이 한다.
+        // @SuppressWarnings ({"deprecation", "unchecked", "varargs"})
+
+        // '-Xlint' 옵션을오 컴파일하면, 경고메시지를 확인할 수 있다.
+        // 괄호[]안이 경고의 종류.아래의 경우 rawtypes
+
+
+
 
 
     }
