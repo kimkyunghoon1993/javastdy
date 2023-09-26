@@ -29,11 +29,11 @@ public class Ex_22_23_24_25 {
 
         // 24. interrupt()
         // - 대기상태(WAITING)인 쓰레드를 실행대기 상태(RUNNABLE)로 만든다. 작업중단 상태를 실행가능하게 만든다
-        // 관련 메서드
 
+        // 관련 메서드
         // void interrupt() - 쓰레드의 interrupted상태를 false에서 true로 변경.
         // boolean isInterrupted - 쓰레드의 interrupted상태를 반환.
-        // static boolean interrupted() - 현재 쓰레드의 interrupted상태를 알려주고, false로 초기화
+        // static boolean interrupted() - 현재 쓰레드의 interrupted 상태를 알려주고, false 로 초기화
 
         // ex)
         // public static void main(String[] args) {
@@ -43,6 +43,31 @@ public class Ex_22_23_24_25 {
         //      th1.interrupt();    // interrrupt() 를 호출하면, interrupted상태가 true가 된다.
         //      ...
         //      System.out.println("isInterrupted(): " + th1.isInterrupted());  //true
+
+        // class Thread {   // 알기 쉽게 변경한 코드
+        //      ...
+        //  boolean interrupted = false;
+        //      ...
+        //  boolean isInterrupted() {
+        //      return interrupted;
+        //  }
+        //
+        // boolean interrupt() {
+        //      interrupted = true;
+        //  }
+        //
+        //}
+
+        // class ThreadEx13_2 extends Thread {
+        //      public void run() {
+        //              ...
+        //          while( downloaded && !isInterrupted())  {
+        //              //  download 를 수행한다.
+        //                  ...
+        //          }
+        //          System.out.println("다운로드가 끝났습니다);
+        //      }
+        // }
 
 
 
